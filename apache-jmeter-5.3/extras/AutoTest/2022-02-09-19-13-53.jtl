@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<httpSample t="302" it="0" lt="267" ct="57" ts="1644405234814" s="true" lb="/getStoreMenu" rc="200" rm="OK" tn="Auto交易 1-1" dt="text" by="70903" sby="441" ng="1" na="1">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <java.net.URL>http://m82-qa.hexcloud.cn/api/v1/menu/getStoreMenu</java.net.URL>
+</httpSample>
+<httpSample t="334" it="0" lt="334" ct="0" ts="1644405235183" s="true" lb="/submitShoppingCart" rc="200" rm="OK" tn="Auto交易 1-1" dt="text" by="1135" sby="1296" ng="1" na="1">
+  <java.net.URL>http://m82-qa.hexcloud.cn/api/v1/tradeCart/submitShoppingCart</java.net.URL>
+</httpSample>
+<httpSample t="252" it="0" lt="252" ct="0" ts="1644405235519" s="true" lb="/getShoppingCart" rc="200" rm="OK" tn="Auto交易 1-1" dt="text" by="1135" sby="485" ng="1" na="1">
+  <java.net.URL>http://m82-qa.hexcloud.cn/api/v1/tradeCart/getShoppingCart</java.net.URL>
+</httpSample>
+<httpSample t="244" it="0" lt="244" ct="0" ts="1644405235772" s="true" lb="/amountCalc" rc="200" rm="OK" tn="Auto交易 1-1" dt="text" by="435" sby="547" ng="1" na="1">
+  <java.net.URL>http://m82-qa.hexcloud.cn/api/v1/tradeOrder/amountCalc</java.net.URL>
+</httpSample>
+<httpSample t="2713" it="0" lt="2713" ct="0" ts="1644405236017" s="true" lb="/createOrder" rc="200" rm="OK" tn="Auto交易 1-1" dt="text" by="835" sby="1463" ng="1" na="1">
+  <java.net.URL>http://m82-qa.hexcloud.cn/api/v1/tradeOrder/createOrder</java.net.URL>
+</httpSample>
+<httpSample t="231" it="0" lt="231" ct="0" ts="1644405238731" s="true" lb="/payOrder" rc="200" rm="OK" tn="Auto交易 1-1" dt="text" by="835" sby="406" ng="1" na="1">
+  <java.net.URL>http://m82-qa.hexcloud.cn/api/v1/tradeOrder/payOrder</java.net.URL>
+</httpSample>
+<httpSample t="78" it="0" lt="78" ct="0" ts="1644405238963" s="true" lb="/payNotify" rc="200" rm="OK" tn="Auto交易 1-1" dt="text" by="275" sby="502" ng="1" na="1">
+  <java.net.URL>http://m82-qa.hexcloud.cn/api/v1/tradeOrder/payNotify</java.net.URL>
+</httpSample>
+<httpSample t="20" it="0" lt="20" ct="0" ts="1644405239042" s="false" lb="/accept 测试直接推送oms" rc="404" rm="Not Found" tn="Auto交易 1-1" dt="text" by="256" sby="2261" ng="1" na="1">
+  <java.net.URL>http://m82-qa.hexcloud.cn/api/v2/oms/takeaway/order/accept</java.net.URL>
+</httpSample>
+
+</testResults>

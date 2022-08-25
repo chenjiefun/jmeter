@@ -1,0 +1,64 @@
+2022-08-25 15:15:11,858 INFO o.a.j.u.JMeterUtils: Setting Locale to zh_CN
+2022-08-25 15:15:11,883 INFO o.a.j.JMeter: Loading user properties from: user.properties
+2022-08-25 15:15:11,889 INFO o.a.j.JMeter: Loading system properties from: system.properties
+2022-08-25 15:15:11,891 INFO o.a.j.JMeter: Copyright (c) 1998-2020 The Apache Software Foundation
+2022-08-25 15:15:11,891 INFO o.a.j.JMeter: Version 5.3
+2022-08-25 15:15:11,891 INFO o.a.j.JMeter: java.version=1.8.0_121
+2022-08-25 15:15:11,891 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2022-08-25 15:15:11,891 INFO o.a.j.JMeter: os.name=Windows 10
+2022-08-25 15:15:11,891 INFO o.a.j.JMeter: os.arch=amd64
+2022-08-25 15:15:11,891 INFO o.a.j.JMeter: os.version=10.0
+2022-08-25 15:15:11,891 INFO o.a.j.JMeter: file.encoding=GBK
+2022-08-25 15:15:11,891 INFO o.a.j.JMeter: java.awt.headless=null
+2022-08-25 15:15:11,891 INFO o.a.j.JMeter: Max memory     =1073741824
+2022-08-25 15:15:11,892 INFO o.a.j.JMeter: Available Processors =8
+2022-08-25 15:15:11,899 INFO o.a.j.JMeter: Default Locale=English (EN)
+2022-08-25 15:15:11,899 INFO o.a.j.JMeter: JMeter  Locale=Chinese (China)
+2022-08-25 15:15:11,899 INFO o.a.j.JMeter: JMeterHome=D:\SoftWare\Soft\apache-jmeter-5.3
+2022-08-25 15:15:11,899 INFO o.a.j.JMeter: user.dir  =D:\SoftWare\Soft\apache-jmeter-5.3\bin
+2022-08-25 15:15:11,899 INFO o.a.j.JMeter: PWD       =D:\SoftWare\Soft\apache-jmeter-5.3\bin
+2022-08-25 15:15:11,901 INFO o.a.j.JMeter: IP: 192.168.9.68 Name: LAPTOP-LRGSHT9T FullName: host.docker.internal
+2022-08-25 15:15:12,096 INFO o.a.j.JMeter: Setting LAF to: laf:com.sun.java.swing.plaf.windows.WindowsLookAndFeel
+2022-08-25 15:15:12,451 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2022-08-25 15:15:14,375 INFO o.j.r.JARSourceHTTP: Requesting https://jmeter-plugins.org/repo/?installID=windows_10-2838853cfbe88570ddf31dc852ae89d4-gui
+2022-08-25 15:15:15,338 WARN o.a.j.g.u.MenuFactory: Could not instantiate class: kg.apc.jmeter.reporters.LoadosophiaUploaderGui
+java.lang.reflect.InvocationTargetException: null
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_121]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[?:1.8.0_121]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[?:1.8.0_121]
+	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[?:1.8.0_121]
+	at org.apache.jmeter.gui.util.MenuFactory.getGUIComponent(MenuFactory.java:207) ~[ApacheJMeter_core.jar:5.3]
+	at org.apache.jmeter.gui.util.MenuFactory.initializeMenus(MenuFactory.java:151) ~[ApacheJMeter_core.jar:5.3]
+	at org.apache.jmeter.gui.util.MenuFactory.<clinit>(MenuFactory.java:107) ~[ApacheJMeter_core.jar:5.3]
+	at org.apache.jmeter.control.gui.TestPlanGui.createPopupMenu(TestPlanGui.java:94) ~[ApacheJMeter_core.jar:5.3]
+	at org.apache.jmeter.gui.tree.JMeterTreeNode.createPopupMenu(JMeterTreeNode.java:184) ~[ApacheJMeter_core.jar:5.3]
+	at org.apache.jmeter.gui.action.EditCommand.doAction(EditCommand.java:46) ~[ApacheJMeter_core.jar:5.3]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:87) ~[ApacheJMeter_core.jar:5.3]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:69) ~[ApacheJMeter_core.jar:5.3]
+	at java.awt.event.InvocationEvent.dispatch(Unknown Source) [?:1.8.0_121]
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source) [?:1.8.0_121]
+	at java.awt.EventQueue.access$500(Unknown Source) [?:1.8.0_121]
+	at java.awt.EventQueue$3.run(Unknown Source) [?:1.8.0_121]
+	at java.awt.EventQueue$3.run(Unknown Source) [?:1.8.0_121]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_121]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source) [?:1.8.0_121]
+	at java.awt.EventQueue.dispatchEvent(Unknown Source) [?:1.8.0_121]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source) [?:1.8.0_121]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source) [?:1.8.0_121]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source) [?:1.8.0_121]
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source) [?:1.8.0_121]
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source) [?:1.8.0_121]
+	at java.awt.EventDispatchThread.run(Unknown Source) [?:1.8.0_121]
+Caused by: java.lang.NoClassDefFoundError: org/apache/commons/httpclient/methods/RequestEntity
+	at kg.apc.jmeter.reporters.LoadosophiaUploaderGui.init(LoadosophiaUploaderGui.java:114) ~[JMeterPlugins-Standard.jar:?]
+	at kg.apc.jmeter.reporters.LoadosophiaUploaderGui.<init>(LoadosophiaUploaderGui.java:28) ~[JMeterPlugins-Standard.jar:?]
+	... 26 more
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.httpclient.methods.RequestEntity
+	at java.net.URLClassLoader.findClass(Unknown Source) ~[?:1.8.0_121]
+	at java.lang.ClassLoader.loadClass(Unknown Source) ~[?:1.8.0_121]
+	at java.lang.ClassLoader.loadClass(Unknown Source) ~[?:1.8.0_121]
+	at kg.apc.jmeter.reporters.LoadosophiaUploaderGui.init(LoadosophiaUploaderGui.java:114) ~[JMeterPlugins-Standard.jar:?]
+	at kg.apc.jmeter.reporters.LoadosophiaUploaderGui.<init>(LoadosophiaUploaderGui.java:28) ~[JMeterPlugins-Standard.jar:?]
+	... 26 more
+2022-08-25 15:15:43,045 INFO o.j.r.PluginManager: Plugins Status: [jpgc-graphs-basic=Standard, jpgc-autostop=0.1, jpgc-sense=Standard, jpgc-cmd=Standard, jpgc-graphs-composite=Standard, jpgc-csl=Standard, jpgc-functions=Standard, jpgc-casutg=Standard, jpgc-dummy=Standard, jpgc-filterresults=Standard, jpgc-ffw=Standard, jpgc-fifo=Standard, jpgc-mergeresults=Standard, jpgc-perfmon=Standard, jpgc-plugins-manager=1.6, jpgc-synthesis=Standard, jpgc-plancheck=Standard, jpgc-tst=Standard, jpgc-wsc=Standard, jmeter-core=5.3, jmeter-ftp=5.3, jmeter-http=5.3, jmeter-jdbc=5.3, jmeter-jms=5.3, jmeter-junit=5.3, jmeter-java=5.3, jmeter-ldap=5.3, jmeter-mail=5.3, jmeter-mongodb=5.3, jmeter-native=5.3, jmeter-tcp=5.3, jmeter-components=5.3, jpgc-standard=2.0]
+2022-08-25 15:15:43,056 INFO o.j.r.PluginManagerMenuItem: Plugins Manager has upgrades: [jpgc-plugins-manager]

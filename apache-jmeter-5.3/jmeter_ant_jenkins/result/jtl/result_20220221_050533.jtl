@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<httpSample t="129" it="0" lt="126" ct="61" ts="1645434335255" s="true" lb="/getStoreMenu" rc="200" rm="OK" tn="Auto交易 1-1" dt="text" de="utf-8" by="347" sby="441" sc="1" ec="0" ng="1" na="1" hn="LAPTOP-LRGSHT9T">
+  <assertionResult>
+    <name>响应断言</name>
+    <failure>false</failure>
+    <error>false</error>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Date: Mon, 21 Feb 2022 09:05:36 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 86
+Connection: keep-alive
+X-Forwarded-Host: m82-ids-qa.hexcloud.cn
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+: 
+content-type: application/json
+Auth-Token: bearer ePxIXsZwtWhN4Ltb5CiWn_hNG0MEUwiymJg0vHXxAjc.cjF84Owx1Gjke5rChY3FzQ3STKxFihnu8OrEDU6OIP4
+Partner-Id: 1016
+Channel-Type: 1
+Content-Length: 94
+Host: m82-qa.hexcloud.cn
+User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_121)
+</requestHeader>
+  <responseData class="java.lang.String">{
+&quot;status_code&quot;: 1,
+&quot;code&quot;: &quot;UNAUTHORIZED&quot;,
+&quot;description&quot;: &quot;Invalid token: expired.&quot;
+}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">{&#xd;
+	&quot;storeCode&quot;: &quot;001&quot;,&#xd;
+	&quot;channelCode&quot;: &quot;APP_M82&quot;,&#xd;
+	&quot;is_limit_info&quot;: true&#xd;
+}application/json</queryString>
+  <java.net.URL>http://m82-qa.hexcloud.cn/api/v1/menu/getStoreMenu</java.net.URL>
+</httpSample>
+<httpSample t="59" it="0" lt="59" ct="0" ts="1645434335444" s="true" lb="/submitShoppingCart" rc="200" rm="OK" tn="Auto交易 1-1" dt="text" de="utf-8" by="347" sby="1277" sc="1" ec="0" ng="1" na="1" hn="LAPTOP-LRGSHT9T">
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Date: Mon, 21 Feb 2022 09:05:36 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 86
+Connection: keep-alive
+X-Forwarded-Host: m82-ids-qa.hexcloud.cn
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+: 
+content-type: application/json
+Auth-Token: bearer ePxIXsZwtWhN4Ltb5CiWn_hNG0MEUwiymJg0vHXxAjc.cjF84Owx1Gjke5rChY3FzQ3STKxFihnu8OrEDU6OIP4
+Partner-Id: 1016
+Channel-Type: 1
+Content-Length: 918
+Host: m82-qa.hexcloud.cn
+User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_121)
+</requestHeader>
+  <responseData class="java.lang.String">{
+&quot;status_code&quot;: 1,
+&quot;code&quot;: &quot;UNAUTHORIZED&quot;,
+&quot;description&quot;: &quot;Invalid token: expired.&quot;
+}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">{&#xd;
+	&quot;channelCode&quot;: &quot;APP_M82&quot;,&#xd;
+	&quot;storeCode&quot;: &quot;001&quot;,&#xd;
+	&quot;menuId&quot;: &quot;&quot;,&#xd;
+	&quot;products&quot;: [{&#xd;
+		&quot;categoryId&quot;: &quot;1461166441438388226&quot;,&#xd;
+		&quot;productId&quot;: &quot;4565499638576283648&quot;,&#xd;
+		&quot;name&quot;: &quot;单规格商品测试&quot;,&#xd;
+		&quot;code&quot;: &quot;23832&quot;,&#xd;
+		&quot;count&quot;: 1,&#xd;
+		&quot;amount&quot;: &quot;0.01&quot;,&#xd;
+		&quot;attributes&quot;: &quot;单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规&quot;,&#xd;
+		&quot;relation&quot;: {}&#xd;
+	}]&#xd;
+}application/json</queryString>
+  <java.net.URL>http://m82-qa.hexcloud.cn/api/v1/tradeCart/submitShoppingCart</java.net.URL>
+</httpSample>
+<httpSample t="53" it="0" lt="53" ct="0" ts="1645434335505" s="true" lb="/getShoppingCart" rc="200" rm="OK" tn="Auto交易 1-1" dt="text" de="utf-8" by="347" sby="466" sc="1" ec="0" ng="1" na="1" hn="LAPTOP-LRGSHT9T">
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Date: Mon, 21 Feb 2022 09:05:36 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 86
+Connection: keep-alive
+X-Forwarded-Host: m82-ids-qa.hexcloud.cn
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+: 
+content-type: application/json
+Auth-Token: bearer ePxIXsZwtWhN4Ltb5CiWn_hNG0MEUwiymJg0vHXxAjc.cjF84Owx1Gjke5rChY3FzQ3STKxFihnu8OrEDU6OIP4
+Partner-Id: 1016
+Channel-Type: 1
+Content-Length: 110
+Host: m82-qa.hexcloud.cn
+User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_121)
+</requestHeader>
+  <responseData class="java.lang.String">{
+&quot;status_code&quot;: 1,
+&quot;code&quot;: &quot;UNAUTHORIZED&quot;,
+&quot;description&quot;: &quot;Invalid token: expired.&quot;
+}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">{&#xd;
+	&quot;storeCode&quot;: &quot;001&quot;,&#xd;
+	&quot;menuId&quot;: &quot;&quot;,&#xd;
+	&quot;channelCode&quot;: &quot;APP_M82&quot;,&#xd;
+	&quot;is_limit_info&quot;: true&#xd;
+}application/json</queryString>
+  <java.net.URL>http://m82-qa.hexcloud.cn/api/v1/tradeCart/getShoppingCart</java.net.URL>
+</httpSample>
+<httpSample t="56" it="0" lt="56" ct="0" ts="1645434335560" s="true" lb="/amountCalc" rc="200" rm="OK" tn="Auto交易 1-1" dt="text" de="utf-8" by="347" sby="523" sc="1" ec="0" ng="1" na="1" hn="LAPTOP-LRGSHT9T">
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Date: Mon, 21 Feb 2022 09:05:36 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 86
+Connection: keep-alive
+X-Forwarded-Host: m82-ids-qa.hexcloud.cn
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+: 
+content-type: application/json
+Auth-Token: bearer ePxIXsZwtWhN4Ltb5CiWn_hNG0MEUwiymJg0vHXxAjc.cjF84Owx1Gjke5rChY3FzQ3STKxFihnu8OrEDU6OIP4
+Partner-Id: 1016
+Channel-Type: 1
+Content-Length: 171
+Host: m82-qa.hexcloud.cn
+User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_121)
+</requestHeader>
+  <responseData class="java.lang.String">{
+&quot;status_code&quot;: 1,
+&quot;code&quot;: &quot;UNAUTHORIZED&quot;,
+&quot;description&quot;: &quot;Invalid token: expired.&quot;
+}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">{&#xd;
+	&quot;storeCode&quot;: &quot;001&quot;,&#xd;
+	&quot;channelCode&quot;: &quot;APP_M82&quot;,&#xd;
+	&quot;menuId&quot;: &quot;&quot;,&#xd;
+	&quot;orderType&quot;: &quot;REALTIME&quot;,&#xd;
+	&quot;deliveryType&quot;: &quot;DINEIN&quot;,&#xd;
+	&quot;cartId&quot;: &quot;&quot;,&#xd;
+	&quot;discs&quot;: []&#xd;
+}application/json</queryString>
+  <java.net.URL>http://m82-qa.hexcloud.cn/api/v1/tradeOrder/amountCalc</java.net.URL>
+</httpSample>
+<httpSample t="51" it="0" lt="51" ct="0" ts="1645434335618" s="true" lb="/createOrder" rc="200" rm="OK" tn="Auto交易 1-1" dt="text" de="utf-8" by="347" sby="1439" sc="1" ec="0" ng="1" na="1" hn="LAPTOP-LRGSHT9T">
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Date: Mon, 21 Feb 2022 09:05:36 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 86
+Connection: keep-alive
+X-Forwarded-Host: m82-ids-qa.hexcloud.cn
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+: 
+content-type: application/json
+Auth-Token: bearer ePxIXsZwtWhN4Ltb5CiWn_hNG0MEUwiymJg0vHXxAjc.cjF84Owx1Gjke5rChY3FzQ3STKxFihnu8OrEDU6OIP4
+Partner-Id: 1016
+Channel-Type: 1
+Content-Length: 1085
+Host: m82-qa.hexcloud.cn
+User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_121)
+</requestHeader>
+  <responseData class="java.lang.String">{
+&quot;status_code&quot;: 1,
+&quot;code&quot;: &quot;UNAUTHORIZED&quot;,
+&quot;description&quot;: &quot;Invalid token: expired.&quot;
+}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">{&#xd;
+	&quot;storeCode&quot;: &quot;001&quot;,&#xd;
+	&quot;channelCode&quot;: &quot;APP_M82&quot;,&#xd;
+	&quot;menuId&quot;: &quot;&quot;,&#xd;
+	&quot;orderType&quot;: &quot;REALTIME&quot;,&#xd;
+	&quot;deliveryType&quot;: &quot;DINEIN&quot;,&#xd;
+	&quot;tableware&quot;: &quot;PRODUCT_NUMBER&quot;,&#xd;
+	&quot;remark&quot;: &quot;&quot;,&#xd;
+	&quot;payments&quot;: [{&#xd;
+		&quot;payType&quot;: &quot;WXMPay&quot;,&#xd;
+		&quot;amount&quot;: 0.01&#xd;
+	}],&#xd;
+	&quot;cartId&quot;: &quot;&quot;,&#xd;
+	&quot;products&quot;: [{&#xd;
+		&quot;identity&quot;: &quot;23832&amp;23832&amp;23832&quot;,&#xd;
+		&quot;categoryId&quot;: &quot;1461166441438388226&quot;,&#xd;
+		&quot;code&quot;: &quot;23832&quot;,&#xd;
+		&quot;name&quot;: &quot;单规格商品测试&quot;,&#xd;
+		&quot;count&quot;: 1,&#xd;
+		&quot;attributes&quot;: &quot;单规格商品测试&quot;,&#xd;
+		&quot;attributesCode&quot;: &quot;23832&quot;,&#xd;
+		&quot;haveRelation&quot;: 0,&#xd;
+		&quot;picture&quot;: &quot;https://next-picture.oss-cn-shanghai.aliyuncs.com/omnichannel-pos/stage/c39-1638781616985.png&quot;,&#xd;
+		&quot;sellingPrice&quot;: 0.01,&#xd;
+		&quot;grossAmount&quot;: 0.01,&#xd;
+		&quot;payAmount&quot;: 0.01,&#xd;
+		&quot;packageFee&quot;: 0,&#xd;
+		&quot;relation&quot;: {&#xd;
+			&quot;productCategory&quot;: &quot;&quot;,&#xd;
+			&quot;sku&quot;: [{&#xd;
+				&quot;code&quot;: &quot;23832&quot;,&#xd;
+				&quot;attrSingleIndex&quot;: &quot;&quot;,&#xd;
+				&quot;attrNames&quot;: &quot;单规格商品测试&quot;,&#xd;
+				&quot;attrValues&quot;: &quot;&quot;,&#xd;
+				&quot;limit_stock&quot;: 0,&#xd;
+				&quot;limit_rule_code&quot;: 0&#xd;
+			}],&#xd;
+			&quot;addition&quot;: [],&#xd;
+			&quot;additionalAttribute&quot;: []&#xd;
+		},&#xd;
+		&quot;stockState&quot;: 1,&#xd;
+		&quot;channelMinBuyCount&quot;: 1&#xd;
+	}],&#xd;
+	&quot;discs&quot;: []&#xd;
+}application/json</queryString>
+  <java.net.URL>http://m82-qa.hexcloud.cn/api/v1/tradeOrder/createOrder</java.net.URL>
+</httpSample>
+<httpSample t="42" it="0" lt="42" ct="0" ts="1645434335671" s="true" lb="/payOrder" rc="200" rm="OK" tn="Auto交易 1-1" dt="text" de="utf-8" by="347" sby="387" sc="1" ec="0" ng="1" na="1" hn="LAPTOP-LRGSHT9T">
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Date: Mon, 21 Feb 2022 09:05:36 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 86
+Connection: keep-alive
+X-Forwarded-Host: m82-ids-qa.hexcloud.cn
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+: 
+content-type: application/json
+Auth-Token: bearer ePxIXsZwtWhN4Ltb5CiWn_hNG0MEUwiymJg0vHXxAjc.cjF84Owx1Gjke5rChY3FzQ3STKxFihnu8OrEDU6OIP4
+Partner-Id: 1016
+Channel-Type: 1
+Content-Length: 38
+Host: m82-qa.hexcloud.cn
+User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_121)
+</requestHeader>
+  <responseData class="java.lang.String">{
+&quot;status_code&quot;: 1,
+&quot;code&quot;: &quot;UNAUTHORIZED&quot;,
+&quot;description&quot;: &quot;Invalid token: expired.&quot;
+}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">{&#xd;
+    &quot;orderId&quot;:&quot;&quot;&#xd;
+}application/json</queryString>
+  <java.net.URL>http://m82-qa.hexcloud.cn/api/v1/tradeOrder/payOrder</java.net.URL>
+</httpSample>
+<httpSample t="50" it="0" lt="50" ct="0" ts="1645434335715" s="true" lb="/payNotify" rc="200" rm="OK" tn="Auto交易 1-1" dt="text" de="utf-8" by="347" sby="483" sc="1" ec="0" ng="1" na="1" hn="LAPTOP-LRGSHT9T">
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Date: Mon, 21 Feb 2022 09:05:36 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 86
+Connection: keep-alive
+X-Forwarded-Host: m82-ids-qa.hexcloud.cn
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+: 
+content-type: application/json
+Auth-Token: bearer ePxIXsZwtWhN4Ltb5CiWn_hNG0MEUwiymJg0vHXxAjc.cjF84Owx1Gjke5rChY3FzQ3STKxFihnu8OrEDU6OIP4
+Partner-Id: 1016
+Channel-Type: 1
+Content-Length: 132
+Host: m82-qa.hexcloud.cn
+User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_121)
+</requestHeader>
+  <responseData class="java.lang.String">{
+&quot;status_code&quot;: 1,
+&quot;code&quot;: &quot;UNAUTHORIZED&quot;,
+&quot;description&quot;: &quot;Invalid token: expired.&quot;
+}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">{&#xd;
+  &quot;orderNo&quot;: &quot;&quot;,&#xd;
+  &quot;tpTransactionNo&quot;: &quot;creat0590623101&quot;,&#xd;
+  &quot;payStatus&quot;: &quot;PAID&quot;,&#xd;
+  &quot;message&quot;: &quot;支付成功&quot;&#xd;
+}application/json</queryString>
+  <java.net.URL>http://m82-qa.hexcloud.cn/api/v1/tradeOrder/payNotify</java.net.URL>
+</httpSample>
+<httpSample t="18" it="0" lt="18" ct="0" ts="1645434335767" s="false" lb="/accept 测试直接推送oms" rc="404" rm="Not Found" tn="Auto交易 1-1" dt="text" de="" by="298" sby="2261" sc="1" ec="1" ng="1" na="1" hn="LAPTOP-LRGSHT9T">
+  <responseHeader class="java.lang.String">HTTP/1.1 404 Not Found
+Date: Mon, 21 Feb 2022 09:05:36 GMT
+Content-Type: application/json
+Content-Length: 45
+Connection: keep-alive
+X-Forwarded-Host: m82-ids-qa.hexcloud.cn
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: keep-alive
+: 
+content-type: application/json
+Auth-Token: bearer ePxIXsZwtWhN4Ltb5CiWn_hNG0MEUwiymJg0vHXxAjc.cjF84Owx1Gjke5rChY3FzQ3STKxFihnu8OrEDU6OIP4
+Partner-Id: 1016
+Channel-Type: 1
+Content-Length: 1904
+Host: m82-qa.hexcloud.cn
+User-Agent: Apache-HttpClient/4.5.12 (Java/1.8.0_121)
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;code&quot;:5,&quot;message&quot;:&quot;Not Found&quot;,&quot;details&quot;:[]}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">{&#xd;
+	&quot;data&quot;: {&#xd;
+		&quot;takeaway_info&quot;: {&#xd;
+			&quot;consignee&quot;: &quot;果汁&quot;,&#xd;
+			&quot;phone_list&quot;: [&quot;13818060246&quot;],&#xd;
+			&quot;order_time&quot;: &quot;2022-01-15 16:20:59&quot;,&#xd;
+			&quot;tp_order_id&quot;: &quot;49f58669029240919d523c10422f8011&quot;,&#xd;
+            &quot;package_fee&quot;:0.02&#xd;
+		},&#xd;
+		&quot;payments&quot;: [{&#xd;
+			&quot;trans_code&quot;: &quot;WXMPay&quot;,&#xd;
+            &quot;trans_name&quot;:&quot;微信小程序支付&quot;,&#xd;
+			&quot;pay_amount&quot;: 0.01,&#xd;
+			&quot;receivable&quot;: 0.01,&#xd;
+			&quot;pay_time&quot;: &quot;2022-01-15 16:20:59&quot;,&#xd;
+			&quot;real_amount&quot;: 0.01,&#xd;
+			&quot;has_invoiced&quot;: false,&#xd;
+			&quot;tp_allowance&quot;: 0,&#xd;
+			&quot;transfer_amount&quot;: 0,&#xd;
+			&quot;merchant_allowance&quot;: 0,&#xd;
+			&quot;seq_id&quot;: &quot;1&quot;&#xd;
+		}],&#xd;
+		&quot;channel&quot;: {&#xd;
+			&quot;orderType&quot;: &quot;DINEIN&quot;,&#xd;
+			&quot;code&quot;: &quot;APP_M82&quot;,&#xd;
+			&quot;tpName&quot;: &quot;wechat&quot;,&#xd;
+			&quot;deliveryType&quot;: &quot;REALTIME&quot;&#xd;
+		},&#xd;
+		&quot;remark&quot;: &quot;&quot;,&#xd;
+		&quot;store&quot;: {&#xd;
+			&quot;code&quot;: &quot;001&quot;&#xd;
+		},&#xd;
+	&quot;products&quot;: [{&#xd;
+		&quot;categoryId&quot;: &quot;1461166441438388226&quot;,&#xd;
+		&quot;productId&quot;: &quot;4565499638576283648&quot;,&#xd;
+		&quot;name&quot;: &quot;单规格商品测试&quot;,&#xd;
+		&quot;code&quot;: &quot;23832&quot;,&#xd;
+		&quot;count&quot;: 1,&#xd;
+		&quot;amount&quot;: &quot;0.01&quot;,&#xd;
+		&quot;attributes&quot;: &quot;单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规格单规&quot;,&#xd;
+		&quot;relation&quot;: {}&#xd;
+	}],&#xd;
+		&quot;promotions&quot;: [],&#xd;
+		&quot;amounts&quot;: {&#xd;
+			&quot;platform_discount_amount&quot;: 0.00,&#xd;
+			&quot;discount_amount&quot;: 0.00,&#xd;
+			&quot;pay_amount&quot;: 0.01,&#xd;
+			&quot;merchant_discount_amount&quot;: 0.00,&#xd;
+			&quot;gross_amount&quot;: 0.01,&#xd;
+			&quot;net_amount&quot;: 0.01&#xd;
+		},&#xd;
+		&quot;coupons&quot;: [],&#xd;
+		&quot;members&quot;: []&#xd;
+	},&#xd;
+	&quot;groupId&quot;: &quot;1016&quot;,&#xd;
+	&quot;shopId&quot;: &quot;001&quot;&#xd;
+}application/json</queryString>
+  <java.net.URL>http://m82-qa.hexcloud.cn/api/v2/oms/takeaway/order/accept</java.net.URL>
+</httpSample>
+
+</testResults>

@@ -1,0 +1,2563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="测试计划" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">content-type</stringProp>
+            <stringProp name="Header.value">application/json</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Partner-Id</stringProp>
+            <stringProp name="Header.value">1016</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">Channel-Type</stringProp>
+            <stringProp name="Header.value">1</stringProp>
+          </elementProp>
+          <elementProp name="" elementType="Header">
+            <stringProp name="Header.name">User-Id</stringProp>
+            <stringProp name="Header.value">331</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP请求默认值" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="content-type" elementType="HTTPArgument">
+              <boolProp name="HTTPArgument.always_encode">false</boolProp>
+              <stringProp name="Argument.value">application/json</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              <stringProp name="Argument.name">content-type</stringProp>
+            </elementProp>
+          </collectionProp>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain">m82-qa.hexcloud.cn</stringProp>
+        <stringProp name="HTTPSampler.port"></stringProp>
+        <stringProp name="HTTPSampler.protocol">http</stringProp>
+        <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="营销用券（线下POS）" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="userCouponNo" elementType="Argument">
+              <stringProp name="Argument.name">userCouponNo</stringProp>
+              <stringProp name="Argument.value">7704f6064b0641d2863058947659c3b8</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="couponType" elementType="Argument">
+              <stringProp name="Argument.name">couponType</stringProp>
+              <stringProp name="Argument.value">2</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="随机变量" enabled="true">
+          <stringProp name="maximumValue">1000000000</stringProp>
+          <stringProp name="minimumValue">1</stringProp>
+          <stringProp name="outputFormat">markeingorderno0000000000</stringProp>
+          <boolProp name="perThread">false</boolProp>
+          <stringProp name="randomSeed"></stringProp>
+          <stringProp name="variableName">marketNo</stringProp>
+        </RandomVariableConfig>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="调试取样器" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="吞吐量控制器" enabled="true">
+          <intProp name="ThroughputController.style">0</intProp>
+          <boolProp name="ThroughputController.perThread">false</boolProp>
+          <intProp name="ThroughputController.maxThroughput">1</intProp>
+          <FloatProperty>
+            <name>ThroughputController.percentThroughput</name>
+            <value>60.0</value>
+            <savedValue>60.0</savedValue>
+          </FloatProperty>
+        </ThroughputController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/homePagePopup" enabled="false">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/v1/airdrop/popup/homePagePopup</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/getMemberCode" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/member/getMemberCode</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/userCenterCouponNums" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/coupon/coupon/userCenterCouponNums</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/queryCoupon" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+	&quot;storeCode&quot;: &quot;001&quot;,&#xd;
+	&quot;channelCode&quot;: &quot;APP_M82&quot;,&#xd;
+	&quot;menuId&quot;: &quot;1461166107861196801&quot;,&#xd;
+	&quot;cartId&quot;: &quot;33165&quot;,&#xd;
+	&quot;take_type&quot;: 0,&#xd;
+	&quot;orderType&quot;: &quot;REALTIME&quot;,&#xd;
+	&quot;deliveryType&quot;: &quot;DINEIN&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/tradeCart/queryCoupon</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/couponCount" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;storeCode&quot;: &quot;001&quot;,&#xd;
+    &quot;subTotal&quot;: &quot;11&quot;,&#xd;
+    &quot;lines&quot;: [&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;3.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;L0001&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;3.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;L0001&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;,&#xd;
+            &quot;accies&quot;: [&#xd;
+                {&#xd;
+                    &quot;price&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;amt&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;qty&quot;: 1,&#xd;
+                    &quot;key_id&quot;: &quot;M1371&quot;&#xd;
+                }&#xd;
+            ]&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;2.50&quot;,&#xd;
+            &quot;amt&quot;: &quot;2.50&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;1230090&quot;,&#xd;
+            &quot;categories&quot;: &quot;1486210480760176642&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;1.50&quot;,&#xd;
+            &quot;amt&quot;: &quot;1.50&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;1230090&quot;,&#xd;
+            &quot;categories&quot;: &quot;1486210480760176642&quot;&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;scene&quot;: 4,&#xd;
+    &quot;channel&quot;: 2,&#xd;
+    &quot;userId&quot;: 331,&#xd;
+    &quot;packageFee&quot;: &quot;1.0&quot;,&#xd;
+    &quot;deliveryFee&quot;: &quot;0.5&quot;,&#xd;
+    &quot;partnerId&quot;: &quot;1016&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/calculation/calculate/couponCount</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/discountCalculate" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;storeCode&quot;:&quot;001&quot;,&#xd;
+    &quot;subTotal&quot;:&quot;11&quot;,&#xd;
+    &quot;lines&quot;: [&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;3.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;L0001&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;3.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;L0001&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;,&#xd;
+            &quot;accies&quot;: [&#xd;
+                {&#xd;
+                    &quot;price&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;amt&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;qty&quot;: 1,&#xd;
+                    &quot;key_id&quot;: &quot;M1371&quot;&#xd;
+                }&#xd;
+            ]&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;2.50&quot;,&#xd;
+            &quot;amt&quot;: &quot;2.50&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;1230090&quot;,&#xd;
+            &quot;categories&quot;: &quot;1486210480760176642&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;1.50&quot;,&#xd;
+            &quot;amt&quot;: &quot;1.50&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;1230090&quot;,&#xd;
+            &quot;categories&quot;: &quot;1486210480760176642&quot;&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;scene&quot;:4,&#xd;
+    &quot;channel&quot;:2,&#xd;
+    &quot;userId&quot;:331,&#xd;
+    &quot;packageFee&quot;:&quot;1.0&quot;,&#xd;
+    &quot;deliveryFee&quot;:&quot;0.5&quot;,&#xd;
+    &quot;partnerId&quot;:&quot;1016&quot;,&#xd;
+    &quot;discs&quot;:{&#xd;
+        &quot;promotion_id&quot;:&quot;${userCouponNo}&quot;,&#xd;
+        &quot;promotion_type&quot;:&quot;${couponType}&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/calculation/calculate/discountCalculate</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 后置处理程序" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters">${Token}</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">//导入json包
+import com.alibaba.fastjson.JSONObject;
+String str = &quot;0&quot;;
+//获取获取请求的返回值
+String response_data = prev.getResponseDataAsString();
+log.info(response_data);
+//将String类型的返回值构造成JSONObject对象
+JSONObject data_obj = JSONObject.parseObject(response_data);
+String status_code = data_obj.get(&quot;status_code&quot;).toString;
+
+if(status_code.equals(str)==false){
+	Failure = true;
+	String Msg = &quot;\n系统返回状态码与期望不一致！请排查是性能问题还是程序代码问题&quot;;
+	FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果: \n&quot; + str + &quot;响应内容：\n&quot; + response_data + &quot;\n&quot;;
+	log.info(FailureMessage);	
+	}
+</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/usePromotions" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;storeCode&quot;:&quot;001&quot;,&#xd;
+    &quot;subTotal&quot;:&quot;11&quot;,&#xd;
+    &quot;lines&quot;: [&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;3.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;L0001&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;3.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;L0001&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;,&#xd;
+            &quot;accies&quot;: [&#xd;
+                {&#xd;
+                    &quot;price&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;amt&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;qty&quot;: 1,&#xd;
+                    &quot;key_id&quot;: &quot;M1371&quot;&#xd;
+                }&#xd;
+            ]&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;2.50&quot;,&#xd;
+            &quot;amt&quot;: &quot;2.50&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;1230090&quot;,&#xd;
+            &quot;categories&quot;: &quot;1486210480760176642&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;1.50&quot;,&#xd;
+            &quot;amt&quot;: &quot;1.50&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;1230090&quot;,&#xd;
+            &quot;categories&quot;: &quot;1486210480760176642&quot;&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;scene&quot;:4,&#xd;
+    &quot;channel&quot;:2,&#xd;
+    &quot;userId&quot;:331,&#xd;
+    &quot;packageFee&quot;:&quot;1.0&quot;,&#xd;
+    &quot;deliveryFee&quot;:&quot;0.5&quot;,&#xd;
+    &quot;partnerId&quot;:&quot;1016&quot;,&#xd;
+    &quot;discs&quot;:[&#xd;
+        {&#xd;
+            &quot;promotion_id&quot;:&quot;${userCouponNo}&quot;,&#xd;
+            &quot;promotion_type&quot;:&quot;${couponType}&quot;&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;orderNo&quot;:&quot;${marketNo}&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/calculation/calculate/usePromotions</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="固定定时器" enabled="true">
+            <stringProp name="ConstantTimer.delay">3000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/backPromotions" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;orderNo&quot;: &quot;${marketNo}&quot;&#xd;
+    &quot;orderStatus&quot;: 1&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/calculation/calculate/backPromotions</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="用表格察看结果" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="RespTimeGraphVisualizer" testclass="ResultCollector" testname="响应时间图" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="计数器" enabled="false">
+          <stringProp name="CounterConfig.start">1</stringProp>
+          <stringProp name="CounterConfig.end">10</stringProp>
+          <stringProp name="CounterConfig.incr">1</stringProp>
+          <stringProp name="CounterConfig.name">name</stringProp>
+          <stringProp name="CounterConfig.format">00</stringProp>
+          <boolProp name="CounterConfig.per_user">false</boolProp>
+        </CounterConfig>
+        <hashTree/>
+        <SyncTimer guiclass="TestBeanGUI" testclass="SyncTimer" testname="同步定时器" enabled="false">
+          <intProp name="groupSize">10</intProp>
+          <longProp name="timeoutInMs">0</longProp>
+        </SyncTimer>
+        <hashTree/>
+        <CriticalSectionController guiclass="CriticalSectionControllerGui" testclass="CriticalSectionController" testname="临界部分控制器" enabled="false">
+          <stringProp name="CriticalSectionController.lockName">${name}</stringProp>
+        </CriticalSectionController>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="营销用券（线上小程序，自提）" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="userCouponNo" elementType="Argument">
+              <stringProp name="Argument.name">userCouponNo</stringProp>
+              <stringProp name="Argument.value">bc0e4cee0fac4cdf9d5e9ee586469013</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="couponType" elementType="Argument">
+              <stringProp name="Argument.name">couponType</stringProp>
+              <stringProp name="Argument.value">3</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="随机变量" enabled="true">
+          <stringProp name="maximumValue">1000000000</stringProp>
+          <stringProp name="minimumValue">1</stringProp>
+          <stringProp name="outputFormat">markeingorderno0000000000</stringProp>
+          <boolProp name="perThread">false</boolProp>
+          <stringProp name="randomSeed"></stringProp>
+          <stringProp name="variableName">marketNo</stringProp>
+        </RandomVariableConfig>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="调试取样器" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="吞吐量控制器" enabled="true">
+          <intProp name="ThroughputController.style">0</intProp>
+          <boolProp name="ThroughputController.perThread">false</boolProp>
+          <intProp name="ThroughputController.maxThroughput">1</intProp>
+          <FloatProperty>
+            <name>ThroughputController.percentThroughput</name>
+            <value>60.0</value>
+            <savedValue>60.0</savedValue>
+          </FloatProperty>
+        </ThroughputController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/homePagePopup" enabled="false">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/v1/airdrop/popup/homePagePopup</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/getMemberCode" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/member/getMemberCode</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/userCenterCouponNums" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/coupon/coupon/userCenterCouponNums</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/queryCoupon" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+	&quot;storeCode&quot;: &quot;001&quot;,&#xd;
+	&quot;channelCode&quot;: &quot;APP_M82&quot;,&#xd;
+	&quot;menuId&quot;: &quot;1461166107861196801&quot;,&#xd;
+	&quot;cartId&quot;: &quot;33165&quot;,&#xd;
+	&quot;take_type&quot;: 0,&#xd;
+	&quot;orderType&quot;: &quot;REALTIME&quot;,&#xd;
+	&quot;deliveryType&quot;: &quot;DINEIN&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/tradeCart/queryCoupon</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/couponCount" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;storeCode&quot;: &quot;001&quot;,&#xd;
+    &quot;subTotal&quot;: &quot;11&quot;,&#xd;
+    &quot;lines&quot;: [&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;3.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;L0001&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;3.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;L0001&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;,&#xd;
+            &quot;accies&quot;: [&#xd;
+                {&#xd;
+                    &quot;price&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;amt&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;qty&quot;: 1,&#xd;
+                    &quot;key_id&quot;: &quot;M1371&quot;&#xd;
+                }&#xd;
+            ]&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;2.50&quot;,&#xd;
+            &quot;amt&quot;: &quot;2.50&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;1230090&quot;,&#xd;
+            &quot;categories&quot;: &quot;1486210480760176642&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;1.50&quot;,&#xd;
+            &quot;amt&quot;: &quot;1.50&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;1230090&quot;,&#xd;
+            &quot;categories&quot;: &quot;1486210480760176642&quot;&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;scene&quot;: 1,&#xd;
+    &quot;channel&quot;: 1,&#xd;
+    &quot;userId&quot;: 331,&#xd;
+    &quot;packageFee&quot;: &quot;1.0&quot;,&#xd;
+    &quot;deliveryFee&quot;: &quot;0.5&quot;,&#xd;
+    &quot;partnerId&quot;: &quot;1016&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/calculation/calculate/couponCount</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/discountCalculate" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;storeCode&quot;:&quot;001&quot;,&#xd;
+    &quot;subTotal&quot;:&quot;11&quot;,&#xd;
+    &quot;lines&quot;: [&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;3.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;L0001&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;3.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;L0001&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;,&#xd;
+            &quot;accies&quot;: [&#xd;
+                {&#xd;
+                    &quot;price&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;amt&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;qty&quot;: 1,&#xd;
+                    &quot;key_id&quot;: &quot;M1371&quot;&#xd;
+                }&#xd;
+            ]&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;2.50&quot;,&#xd;
+            &quot;amt&quot;: &quot;2.50&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;1230090&quot;,&#xd;
+            &quot;categories&quot;: &quot;1486210480760176642&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;1.50&quot;,&#xd;
+            &quot;amt&quot;: &quot;1.50&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;1230090&quot;,&#xd;
+            &quot;categories&quot;: &quot;1486210480760176642&quot;&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;scene&quot;:1,&#xd;
+    &quot;channel&quot;:1,&#xd;
+    &quot;userId&quot;:331,&#xd;
+    &quot;packageFee&quot;:&quot;1.0&quot;,&#xd;
+    &quot;deliveryFee&quot;:&quot;0.5&quot;,&#xd;
+    &quot;partnerId&quot;:&quot;1016&quot;,&#xd;
+    &quot;discs&quot;:{&#xd;
+        &quot;promotion_id&quot;:&quot;${userCouponNo}&quot;,&#xd;
+        &quot;promotion_type&quot;:&quot;${couponType}&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/calculation/calculate/discountCalculate</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 后置处理程序" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters">${Token}</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">//导入json包
+import com.alibaba.fastjson.JSONObject;
+String str = &quot;0&quot;;
+//获取获取请求的返回值
+String response_data = prev.getResponseDataAsString();
+log.info(response_data);
+//将String类型的返回值构造成JSONObject对象
+JSONObject data_obj = JSONObject.parseObject(response_data);
+String status_code = data_obj.get(&quot;status_code&quot;).toString;
+
+if(status_code.equals(str)==false){
+	Failure = true;
+	String Msg = &quot;\n系统返回状态码与期望不一致！请排查是性能问题还是程序代码问题&quot;;
+	FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果: \n&quot; + str + &quot;响应内容：\n&quot; + response_data + &quot;\n&quot;;
+	log.info(FailureMessage);	
+	}
+</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/usePromotions" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;storeCode&quot;:&quot;001&quot;,&#xd;
+    &quot;subTotal&quot;:&quot;11&quot;,&#xd;
+    &quot;lines&quot;: [&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;3.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;L0001&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;3.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;L0001&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;,&#xd;
+            &quot;accies&quot;: [&#xd;
+                {&#xd;
+                    &quot;price&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;amt&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;qty&quot;: 1,&#xd;
+                    &quot;key_id&quot;: &quot;M1371&quot;&#xd;
+                }&#xd;
+            ]&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;2.50&quot;,&#xd;
+            &quot;amt&quot;: &quot;2.50&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;1230090&quot;,&#xd;
+            &quot;categories&quot;: &quot;1486210480760176642&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;1.50&quot;,&#xd;
+            &quot;amt&quot;: &quot;1.50&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;1230090&quot;,&#xd;
+            &quot;categories&quot;: &quot;1486210480760176642&quot;&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;scene&quot;:1,&#xd;
+    &quot;channel&quot;:1,&#xd;
+    &quot;userId&quot;:331,&#xd;
+    &quot;packageFee&quot;:&quot;1.0&quot;,&#xd;
+    &quot;deliveryFee&quot;:&quot;0.5&quot;,&#xd;
+    &quot;partnerId&quot;:&quot;1016&quot;,&#xd;
+    &quot;discs&quot;:[&#xd;
+        {&#xd;
+            &quot;promotion_id&quot;:&quot;${userCouponNo}&quot;,&#xd;
+            &quot;promotion_type&quot;:&quot;${couponType}&quot;&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;orderNo&quot;:&quot;${marketNo}&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/calculation/calculate/usePromotions</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="固定定时器" enabled="true">
+            <stringProp name="ConstantTimer.delay">3000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/backPromotions" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;orderNo&quot;: &quot;${marketNo}&quot;&#xd;
+    &quot;orderStatus&quot;: 1&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/calculation/calculate/backPromotions</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="用表格察看结果" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="RespTimeGraphVisualizer" testclass="ResultCollector" testname="响应时间图" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="计数器" enabled="false">
+          <stringProp name="CounterConfig.start">1</stringProp>
+          <stringProp name="CounterConfig.end">10</stringProp>
+          <stringProp name="CounterConfig.incr">1</stringProp>
+          <stringProp name="CounterConfig.name">name</stringProp>
+          <stringProp name="CounterConfig.format">00</stringProp>
+          <boolProp name="CounterConfig.per_user">false</boolProp>
+        </CounterConfig>
+        <hashTree/>
+        <SyncTimer guiclass="TestBeanGUI" testclass="SyncTimer" testname="同步定时器" enabled="false">
+          <intProp name="groupSize">10</intProp>
+          <longProp name="timeoutInMs">0</longProp>
+        </SyncTimer>
+        <hashTree/>
+        <CriticalSectionController guiclass="CriticalSectionControllerGui" testclass="CriticalSectionController" testname="临界部分控制器" enabled="false">
+          <stringProp name="CriticalSectionController.lockName">${name}</stringProp>
+        </CriticalSectionController>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="营销商品券用券" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="userCouponNo" elementType="Argument">
+              <stringProp name="Argument.name">userCouponNo</stringProp>
+              <stringProp name="Argument.value">7477891a37344c16b3996e48c80a3100</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="couponType" elementType="Argument">
+              <stringProp name="Argument.name">couponType</stringProp>
+              <stringProp name="Argument.value">4</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="随机变量" enabled="true">
+          <stringProp name="maximumValue">1000000000</stringProp>
+          <stringProp name="minimumValue">1</stringProp>
+          <stringProp name="outputFormat">markeingorderno0000000000</stringProp>
+          <boolProp name="perThread">false</boolProp>
+          <stringProp name="randomSeed"></stringProp>
+          <stringProp name="variableName">marketNo</stringProp>
+        </RandomVariableConfig>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="调试取样器" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="吞吐量控制器" enabled="true">
+          <intProp name="ThroughputController.style">0</intProp>
+          <boolProp name="ThroughputController.perThread">false</boolProp>
+          <intProp name="ThroughputController.maxThroughput">1</intProp>
+          <FloatProperty>
+            <name>ThroughputController.percentThroughput</name>
+            <value>60.0</value>
+            <savedValue>60.0</savedValue>
+          </FloatProperty>
+        </ThroughputController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/homePagePopup" enabled="false">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/v1/airdrop/popup/homePagePopup</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/getMemberCode" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/member/getMemberCode</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/userCenterCouponNums" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/coupon/coupon/userCenterCouponNums</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/queryCoupon" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+	&quot;storeCode&quot;: &quot;001&quot;,&#xd;
+	&quot;channelCode&quot;: &quot;APP_M82&quot;,&#xd;
+	&quot;menuId&quot;: &quot;1461166107861196801&quot;,&#xd;
+	&quot;cartId&quot;: &quot;33165&quot;,&#xd;
+	&quot;take_type&quot;: 0,&#xd;
+	&quot;orderType&quot;: &quot;REALTIME&quot;,&#xd;
+	&quot;deliveryType&quot;: &quot;DINEIN&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/tradeCart/queryCoupon</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/couponCount" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;storeCode&quot;: &quot;001&quot;,&#xd;
+    &quot;subTotal&quot;: &quot;23.42&quot;,&#xd;
+    &quot;lines&quot;: [&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;3.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;L0001&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;3.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;L0001&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;1.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;1.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;M1371&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;2.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;2.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;1.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;M123423&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;,&#xd;
+            &quot;accies&quot;: [&#xd;
+                {&#xd;
+                    &quot;price&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;amt&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;qty&quot;: 1,&#xd;
+                    &quot;key_id&quot;: &quot;M1371&quot;&#xd;
+                }&#xd;
+            ]&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;2.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;2.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;1.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;M123423&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;,&#xd;
+            &quot;accies&quot;: [&#xd;
+                {&#xd;
+                    &quot;price&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;amt&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;qty&quot;: 1,&#xd;
+                    &quot;key_id&quot;: &quot;M1371&quot;&#xd;
+                }&#xd;
+            ]&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;8.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;8.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;1.20&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;001&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166498409619458&quot;,&#xd;
+            &quot;accies&quot;: [&#xd;
+                {&#xd;
+                    &quot;price&quot;: &quot;1.20&quot;,&#xd;
+                    &quot;amt&quot;: &quot;1.20&quot;,&#xd;
+                    &quot;qty&quot;: 1,&#xd;
+                    &quot;key_id&quot;: &quot;SP123&quot;&#xd;
+                }&#xd;
+            ]&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;0.01&quot;,&#xd;
+            &quot;amt&quot;: &quot;0.01&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.01&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;842899993&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;,&#xd;
+            &quot;accies&quot;: [&#xd;
+                {&#xd;
+                    &quot;price&quot;: &quot;0.01&quot;,&#xd;
+                    &quot;amt&quot;: &quot;0.01&quot;,&#xd;
+                    &quot;qty&quot;: 1,&#xd;
+                    &quot;key_id&quot;: &quot;L0005&quot;&#xd;
+                }&#xd;
+            ]&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;0.20&quot;,&#xd;
+            &quot;amt&quot;: &quot;0.20&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;1.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;01234&quot;,&#xd;
+            &quot;categories&quot;: &quot;1490977253321900034&quot;,&#xd;
+            &quot;accies&quot;: [&#xd;
+                {&#xd;
+                    &quot;price&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;amt&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;qty&quot;: 1,&#xd;
+                    &quot;key_id&quot;: &quot;M1371&quot;&#xd;
+                }&#xd;
+            ]&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;scene&quot;: 2,&#xd;
+    &quot;channel&quot;: 1,&#xd;
+    &quot;userId&quot;: 331,&#xd;
+    &quot;packageFee&quot;: &quot;1.33&quot;,&#xd;
+    &quot;deliveryFee&quot;: &quot;0.50&quot;,&#xd;
+    &quot;partnerId&quot;: &quot;1016&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/calculation/calculate/couponCount</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/discountCalculate" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;storeCode&quot;:&quot;001&quot;,&#xd;
+    &quot;subTotal&quot;:&quot;10&quot;,&#xd;
+    &quot;lines&quot;:[&#xd;
+        {&#xd;
+            &quot;price&quot;:&quot;3.00&quot;,&#xd;
+            &quot;amt&quot;:&quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;:&quot;0.00&quot;,&#xd;
+            &quot;qty&quot;:1,&#xd;
+            &quot;key_id&quot;:&quot;L0001&quot;,&#xd;
+            &quot;categories&quot;:&quot;1461166441438388226&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;:&quot;3.00&quot;,&#xd;
+            &quot;amt&quot;:&quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;:&quot;0.00&quot;,&#xd;
+            &quot;qty&quot;:1,&#xd;
+            &quot;key_id&quot;:&quot;L0001&quot;,&#xd;
+            &quot;categories&quot;:&quot;1461166441438388226&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;:&quot;2.50&quot;,&#xd;
+            &quot;amt&quot;:&quot;2.50&quot;,&#xd;
+            &quot;accAmt&quot;:&quot;0.00&quot;,&#xd;
+            &quot;qty&quot;:1,&#xd;
+            &quot;key_id&quot;:&quot;1230090&quot;,&#xd;
+            &quot;categories&quot;:&quot;1486210480760176642&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;:&quot;1.50&quot;,&#xd;
+            &quot;amt&quot;:&quot;1.50&quot;,&#xd;
+            &quot;accAmt&quot;:&quot;0.00&quot;,&#xd;
+            &quot;qty&quot;:1,&#xd;
+            &quot;key_id&quot;:&quot;1230090&quot;,&#xd;
+            &quot;categories&quot;:&quot;1486210480760176642&quot;&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;scene&quot;:4,&#xd;
+    &quot;channel&quot;:2,&#xd;
+    &quot;userId&quot;:331,&#xd;
+    &quot;packageFee&quot;:&quot;0.5&quot;,&#xd;
+    &quot;deliveryFee&quot;:&quot;0.5&quot;,&#xd;
+    &quot;partnerId&quot;:&quot;1016&quot;,&#xd;
+    &quot;discs&quot;:{&#xd;
+        &quot;promotion_id&quot;:&quot;${userCouponNo}&quot;,&#xd;
+        &quot;promotion_type&quot;:&quot;${couponType}&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/calculation/calculate/discountCalculate</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 后置处理程序" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters">${Token}</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">//导入json包
+import com.alibaba.fastjson.JSONObject;
+String str = &quot;0&quot;;
+//获取获取请求的返回值
+String response_data = prev.getResponseDataAsString();
+log.info(response_data);
+//将String类型的返回值构造成JSONObject对象
+JSONObject data_obj = JSONObject.parseObject(response_data);
+String status_code = data_obj.get(&quot;status_code&quot;).toString;
+
+if(status_code.equals(str)==false){
+	Failure = true;
+	String Msg = &quot;\n系统返回状态码与期望不一致！请排查是性能问题还是程序代码问题&quot;;
+	FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果: \n&quot; + str + &quot;响应内容：\n&quot; + response_data + &quot;\n&quot;;
+	log.info(FailureMessage);	
+	}
+</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/usePromotions" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;storeCode&quot;:&quot;001&quot;,&#xd;
+    &quot;subTotal&quot;:&quot;10&quot;,&#xd;
+    &quot;lines&quot;:[&#xd;
+        {&#xd;
+            &quot;price&quot;:&quot;3.00&quot;,&#xd;
+            &quot;amt&quot;:&quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;:&quot;0.00&quot;,&#xd;
+            &quot;qty&quot;:1,&#xd;
+            &quot;key_id&quot;:&quot;L0001&quot;,&#xd;
+            &quot;categories&quot;:&quot;1461166441438388226&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;:&quot;3.00&quot;,&#xd;
+            &quot;amt&quot;:&quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;:&quot;0.00&quot;,&#xd;
+            &quot;qty&quot;:1,&#xd;
+            &quot;key_id&quot;:&quot;L0001&quot;,&#xd;
+            &quot;categories&quot;:&quot;1461166441438388226&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;:&quot;2.50&quot;,&#xd;
+            &quot;amt&quot;:&quot;2.50&quot;,&#xd;
+            &quot;accAmt&quot;:&quot;0.00&quot;,&#xd;
+            &quot;qty&quot;:1,&#xd;
+            &quot;key_id&quot;:&quot;1230090&quot;,&#xd;
+            &quot;categories&quot;:&quot;1486210480760176642&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;:&quot;1.50&quot;,&#xd;
+            &quot;amt&quot;:&quot;1.50&quot;,&#xd;
+            &quot;accAmt&quot;:&quot;0.00&quot;,&#xd;
+            &quot;qty&quot;:1,&#xd;
+            &quot;key_id&quot;:&quot;1230090&quot;,&#xd;
+            &quot;categories&quot;:&quot;1486210480760176642&quot;&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;scene&quot;:4,&#xd;
+    &quot;channel&quot;:2,&#xd;
+    &quot;userId&quot;:331,&#xd;
+    &quot;packageFee&quot;:&quot;0.5&quot;,&#xd;
+    &quot;deliveryFee&quot;:&quot;0.5&quot;,&#xd;
+    &quot;partnerId&quot;:&quot;1016&quot;,&#xd;
+    &quot;discs&quot;:[&#xd;
+        {&#xd;
+            &quot;promotion_id&quot;:&quot;${userCouponNo}&quot;,&#xd;
+            &quot;promotion_type&quot;:&quot;${couponType}&quot;&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;orderNo&quot;:&quot;${marketNo}&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/calculation/calculate/usePromotions</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="固定定时器" enabled="true">
+            <stringProp name="ConstantTimer.delay">3000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/backPromotions" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;orderNo&quot;: &quot;${marketNo}&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/calculation/calculate/backPromotions</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="用表格察看结果" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="RespTimeGraphVisualizer" testclass="ResultCollector" testname="响应时间图" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="计数器" enabled="false">
+          <stringProp name="CounterConfig.start">1</stringProp>
+          <stringProp name="CounterConfig.end">10</stringProp>
+          <stringProp name="CounterConfig.incr">1</stringProp>
+          <stringProp name="CounterConfig.name">name</stringProp>
+          <stringProp name="CounterConfig.format">00</stringProp>
+          <boolProp name="CounterConfig.per_user">false</boolProp>
+        </CounterConfig>
+        <hashTree/>
+        <SyncTimer guiclass="TestBeanGUI" testclass="SyncTimer" testname="同步定时器" enabled="false">
+          <intProp name="groupSize">10</intProp>
+          <longProp name="timeoutInMs">0</longProp>
+        </SyncTimer>
+        <hashTree/>
+        <CriticalSectionController guiclass="CriticalSectionControllerGui" testclass="CriticalSectionController" testname="临界部分控制器" enabled="false">
+          <stringProp name="CriticalSectionController.lockName">${name}</stringProp>
+        </CriticalSectionController>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="营销用券（线上小程序，外卖）" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="userCouponNo" elementType="Argument">
+              <stringProp name="Argument.name">userCouponNo</stringProp>
+              <stringProp name="Argument.value">437b0797789643d4bb5aaff719e08336</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="couponType" elementType="Argument">
+              <stringProp name="Argument.name">couponType</stringProp>
+              <stringProp name="Argument.value">2</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="随机变量" enabled="true">
+          <stringProp name="maximumValue">1000000000</stringProp>
+          <stringProp name="minimumValue">1</stringProp>
+          <stringProp name="outputFormat">markeingorderno0000000000</stringProp>
+          <boolProp name="perThread">false</boolProp>
+          <stringProp name="randomSeed"></stringProp>
+          <stringProp name="variableName">marketNo</stringProp>
+        </RandomVariableConfig>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="调试取样器" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="吞吐量控制器" enabled="true">
+          <intProp name="ThroughputController.style">0</intProp>
+          <boolProp name="ThroughputController.perThread">false</boolProp>
+          <intProp name="ThroughputController.maxThroughput">1</intProp>
+          <FloatProperty>
+            <name>ThroughputController.percentThroughput</name>
+            <value>60.0</value>
+            <savedValue>60.0</savedValue>
+          </FloatProperty>
+        </ThroughputController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/homePagePopup" enabled="false">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+            <stringProp name="HTTPSampler.path">/api/v1/airdrop/popup/homePagePopup</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/getMemberCode" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/member/getMemberCode</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/userCenterCouponNums" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/coupon/coupon/userCenterCouponNums</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/queryCoupon" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+	&quot;storeCode&quot;: &quot;001&quot;,&#xd;
+	&quot;channelCode&quot;: &quot;APP_M82&quot;,&#xd;
+	&quot;menuId&quot;: &quot;1461166107861196801&quot;,&#xd;
+	&quot;cartId&quot;: &quot;33165&quot;,&#xd;
+	&quot;take_type&quot;: 0,&#xd;
+	&quot;orderType&quot;: &quot;REALTIME&quot;,&#xd;
+	&quot;deliveryType&quot;: &quot;DINEIN&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/tradeCart/queryCoupon</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/couponCount" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;storeCode&quot;: &quot;001&quot;,&#xd;
+    &quot;subTotal&quot;: &quot;11&quot;,&#xd;
+    &quot;lines&quot;: [&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;3.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;L0001&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;3.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;L0001&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;,&#xd;
+            &quot;accies&quot;: [&#xd;
+                {&#xd;
+                    &quot;price&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;amt&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;qty&quot;: 1,&#xd;
+                    &quot;key_id&quot;: &quot;M1371&quot;&#xd;
+                }&#xd;
+            ]&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;2.50&quot;,&#xd;
+            &quot;amt&quot;: &quot;2.50&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;1230090&quot;,&#xd;
+            &quot;categories&quot;: &quot;1486210480760176642&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;1.50&quot;,&#xd;
+            &quot;amt&quot;: &quot;1.50&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;1230090&quot;,&#xd;
+            &quot;categories&quot;: &quot;1486210480760176642&quot;&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;scene&quot;: 2,&#xd;
+    &quot;channel&quot;: 1,&#xd;
+    &quot;userId&quot;: 331,&#xd;
+    &quot;packageFee&quot;: &quot;1.0&quot;,&#xd;
+    &quot;deliveryFee&quot;: &quot;0.5&quot;,&#xd;
+    &quot;partnerId&quot;: &quot;1016&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/calculation/calculate/couponCount</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/discountCalculate" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;storeCode&quot;:&quot;001&quot;,&#xd;
+    &quot;subTotal&quot;:&quot;11&quot;,&#xd;
+    &quot;lines&quot;: [&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;3.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;L0001&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;3.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;L0001&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;,&#xd;
+            &quot;accies&quot;: [&#xd;
+                {&#xd;
+                    &quot;price&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;amt&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;qty&quot;: 1,&#xd;
+                    &quot;key_id&quot;: &quot;M1371&quot;&#xd;
+                }&#xd;
+            ]&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;2.50&quot;,&#xd;
+            &quot;amt&quot;: &quot;2.50&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;1230090&quot;,&#xd;
+            &quot;categories&quot;: &quot;1486210480760176642&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;1.50&quot;,&#xd;
+            &quot;amt&quot;: &quot;1.50&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;1230090&quot;,&#xd;
+            &quot;categories&quot;: &quot;1486210480760176642&quot;&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;scene&quot;:2,&#xd;
+    &quot;channel&quot;:1,&#xd;
+    &quot;userId&quot;:331,&#xd;
+    &quot;packageFee&quot;:&quot;1.0&quot;,&#xd;
+    &quot;deliveryFee&quot;:&quot;0.5&quot;,&#xd;
+    &quot;partnerId&quot;:&quot;1016&quot;,&#xd;
+    &quot;discs&quot;:{&#xd;
+        &quot;promotion_id&quot;:&quot;${userCouponNo}&quot;,&#xd;
+        &quot;promotion_type&quot;:&quot;${couponType}&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/calculation/calculate/discountCalculate</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 后置处理程序" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters">${Token}</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">//导入json包
+import com.alibaba.fastjson.JSONObject;
+String str = &quot;0&quot;;
+//获取获取请求的返回值
+String response_data = prev.getResponseDataAsString();
+log.info(response_data);
+//将String类型的返回值构造成JSONObject对象
+JSONObject data_obj = JSONObject.parseObject(response_data);
+String status_code = data_obj.get(&quot;status_code&quot;).toString;
+
+if(status_code.equals(str)==false){
+	Failure = true;
+	String Msg = &quot;\n系统返回状态码与期望不一致！请排查是性能问题还是程序代码问题&quot;;
+	FailureMessage = Msg + &quot;\n&quot; + &quot;期望结果: \n&quot; + str + &quot;响应内容：\n&quot; + response_data + &quot;\n&quot;;
+	log.info(FailureMessage);	
+	}
+</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/usePromotions" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;storeCode&quot;:&quot;001&quot;,&#xd;
+    &quot;subTotal&quot;:&quot;11&quot;,&#xd;
+    &quot;lines&quot;: [&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;3.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;L0001&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;3.00&quot;,&#xd;
+            &quot;amt&quot;: &quot;3.00&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;L0001&quot;,&#xd;
+            &quot;categories&quot;: &quot;1461166441438388226&quot;,&#xd;
+            &quot;accies&quot;: [&#xd;
+                {&#xd;
+                    &quot;price&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;amt&quot;: &quot;1.00&quot;,&#xd;
+                    &quot;qty&quot;: 1,&#xd;
+                    &quot;key_id&quot;: &quot;M1371&quot;&#xd;
+                }&#xd;
+            ]&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;2.50&quot;,&#xd;
+            &quot;amt&quot;: &quot;2.50&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;1230090&quot;,&#xd;
+            &quot;categories&quot;: &quot;1486210480760176642&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;price&quot;: &quot;1.50&quot;,&#xd;
+            &quot;amt&quot;: &quot;1.50&quot;,&#xd;
+            &quot;accAmt&quot;: &quot;0.00&quot;,&#xd;
+            &quot;qty&quot;: 1,&#xd;
+            &quot;key_id&quot;: &quot;1230090&quot;,&#xd;
+            &quot;categories&quot;: &quot;1486210480760176642&quot;&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;scene&quot;:2,&#xd;
+    &quot;channel&quot;:1,&#xd;
+    &quot;userId&quot;:331,&#xd;
+    &quot;packageFee&quot;:&quot;1.0&quot;,&#xd;
+    &quot;deliveryFee&quot;:&quot;0.5&quot;,&#xd;
+    &quot;partnerId&quot;:&quot;1016&quot;,&#xd;
+    &quot;discs&quot;:[&#xd;
+        {&#xd;
+            &quot;promotion_id&quot;:&quot;${userCouponNo}&quot;,&#xd;
+            &quot;promotion_type&quot;:&quot;${couponType}&quot;&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;orderNo&quot;:&quot;${marketNo}&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/calculation/calculate/usePromotions</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="固定定时器" enabled="true">
+            <stringProp name="ConstantTimer.delay">3000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/backPromotions" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;orderNo&quot;: &quot;${marketNo}&quot;&#xd;
+    &quot;orderStatus&quot;: 1&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/api/v1/calculation/calculate/backPromotions</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="用表格察看结果" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="RespTimeGraphVisualizer" testclass="ResultCollector" testname="响应时间图" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="计数器" enabled="false">
+          <stringProp name="CounterConfig.start">1</stringProp>
+          <stringProp name="CounterConfig.end">10</stringProp>
+          <stringProp name="CounterConfig.incr">1</stringProp>
+          <stringProp name="CounterConfig.name">name</stringProp>
+          <stringProp name="CounterConfig.format">00</stringProp>
+          <boolProp name="CounterConfig.per_user">false</boolProp>
+        </CounterConfig>
+        <hashTree/>
+        <SyncTimer guiclass="TestBeanGUI" testclass="SyncTimer" testname="同步定时器" enabled="false">
+          <intProp name="groupSize">10</intProp>
+          <longProp name="timeoutInMs">0</longProp>
+        </SyncTimer>
+        <hashTree/>
+        <CriticalSectionController guiclass="CriticalSectionControllerGui" testclass="CriticalSectionController" testname="临界部分控制器" enabled="false">
+          <stringProp name="CriticalSectionController.lockName">${name}</stringProp>
+        </CriticalSectionController>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
